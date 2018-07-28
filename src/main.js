@@ -22,7 +22,6 @@ class App extends React.Component {
     this.state = {
       animalStr: 'Cow',
       animal: '',
-      text: 'CLICK THE BUTTON',
       content: cowsay({
         text: 'CLICK THE BUTTON',
         cow: '',
@@ -36,9 +35,8 @@ class App extends React.Component {
   newContent() {
     let name = faker.name.findName();
     let adj = faker.hacker.adjective();
-    let text = ` my name is ${name}, and I'm a ${adj} ${this.state.animalStr}`;
+    let text = `my name is ${name}, and I'm a ${adj} ${this.state.animalStr}`;
     this.setState({
-      text,
       content: cowsay({
         text,
         cow: this.state.animal,
@@ -47,11 +45,12 @@ class App extends React.Component {
   }
 
   newAnimal(event) {
+    let adj = faker.hacker.adjective();
     this.setState({
       animalStr: event.target.options[event.target.selectedIndex].text,
       animal: event.target.value,
       content: cowsay({
-        text: this.state.text,
+        text: `my name is ${name}, and I'm a ${adj} ${event.target.options[event.target.selectedIndex].text}`,
         cow: event.target.value,
       }),
     });
