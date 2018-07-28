@@ -34,8 +34,6 @@ class App extends React.Component {
   }
 
   newContent() {
-    console.log(faker.random.words())
-    console.log(this.state);
     let name = faker.name.findName();
     let adj = faker.hacker.adjective();
     let text = ` my name is ${name}, and I'm a ${adj} ${this.state.animalStr}`;
@@ -55,9 +53,8 @@ class App extends React.Component {
       content: cowsay({
         text: this.state.text,
         cow: event.target.value,
-      }),    
+      }),
     });
-
   }
 
   render() {

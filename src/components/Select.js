@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import {SQUIRREL, ELEPHANT, GOAT, KITTY, KOALA, VADER } from 'cowsay';
+import { SQUIRREL, ELEPHANT, GOAT, KITTY, KOALA, VADER } from 'cowsay';
  
 class Select extends React.Component {
 
